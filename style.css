@@ -1,0 +1,91 @@
+/*
+Background :- background: linear-gradient(to right, #1d4350, #a43931);
+background: linear-gradient(to right, #4ca1af, #c4e0e5);
+background: linear-gradient(to right, #e0eafc, #cfdef3);
+background: linear-gradient(to right, #eecda3, #ef629f);
+*/
+* {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+dialog {
+  width: 380px;
+  height: 500px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 4fr 1fr;
+  gap: 10px;
+}
+
+#book-image {
+  height: 100px;
+  width: 150px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.form-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-image > label {
+  text-align: center;
+  width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+
+.form-image > input {
+  display: none;
+}
+
+.dialog-form-content {
+  display: grid;
+}
+
+.dialog-form-content > input {
+  height: 25px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  outline: none;
+  border: 1px solid gray;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+}
+
+.dailog-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dailog-form-buttons > button {
+  padding: 0;
+  cursor: pointer;
+  height: 70%;
+  width: 100px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.cancel {
+  background-color: aqua;
+}
+.submit {
+  background-color: aqua;
+}

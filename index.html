@@ -7,5 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="header">
+      <b>Libree</b>
+      <p>
+        One place to manage all your reading material / books ...
+        <i class="HappyReading">Happy Reading</i>
+      </p>
+    </div>
+    <div class="content">
+      <div>
+        <p>Your books</p>
+        <button class="create">New Book</button>
+      </div>
+      <div class="book-content"></div>
+    </div>
+    <dialog>
+      <form action="">
+        <div class="form-image">
+          <img src="Assets/default.jpg" alt="Book" id="book-image" />
+          <label style="display: block" for="image-input"
+            >Select your image</label
+          >
+          <input
+            type="file"
+            accept="image/jpeg , image/jpg , image/png"
+            id="image-input"
+          />
+        </div>
+        <div class="dialog-form-content">
+          <label style="display: block" for="book-name">Name:-</label>
+          <input
+            type="text"
+            id="book-name"
+            placeholder="Name of your book"
+            maxlength="16"
+            pattern="[a-zA-Z]+"
+          />
+          <label style="display: block" for="book-author">Author:-</label>
+          <input
+            type="text"
+            id="book-author"
+            placeholder="Name of Author"
+            maxlength="16"
+            pattern="[a-zA-Z]+"
+          />
+          <label style="display: block" for="book-pages">No of Pages:-</label>
+          <input
+            type="text"
+            id="book-pages"
+            placeholder="No of pages"
+            maxlength="3"
+            pattern="/d{10}"
+          />
+          <label style="display: block" for="book-discription"
+            >Discription:-</label
+          >
+          <textarea
+            name="Discription"
+            id="book-discription"
+            placeholder="Discription"
+            rows="8"
+            cols="10"
+          ></textarea>
+        </div>
+        <div class="dailog-form-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="output"></div>
+  </body>
 </html>

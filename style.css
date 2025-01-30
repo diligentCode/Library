@@ -9,9 +9,108 @@ background: linear-gradient(to right, #eecda3, #ef629f);
   box-sizing: border-box;
 }
 
+html {
+  background: linear-gradient(to right, #1d4350, #a43931);
+  background: linear-gradient(to right, #ef32d9, #89fffd);
+  /* background: linear-gradient(to right, #b3f5ff, #f0fdff); */
+  height: 100vh;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+body {
+  height: 100%;
+  /* background: linear-gradient(to right, #e0eafc, #cfdef3);
+  background: linear-gradient(to right, #eecda3, #ef629f); */
+  background: linear-gradient(to right, #41295a, #2f0743);
+
+  border-radius: 50px;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+.header {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+@font-face {
+  font-family: my-font;
+  src: url(Assets/flicker/Flicker.ttf);
+}
+.header > b {
+  font-family: my-font;
+  letter-spacing: 8px;
+  font-size: 100px;
+  font-weight: 900;
+
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  color: transparent;
+  background-clip: text;
+}
+
+.header > p {
+  font-family: fantasy;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #bcfffe;
+}
+.HappyReading {
+  font-size: 30px;
+  font-weight: 900;
+  color: gold;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+}
+
+.content > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.content > div:first-child > p {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  color: white;
+}
+.content > div:first-child > button {
+  width: 90px;
+  font-size: 15px;
+  font-weight: 900;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background-color: #cf23cf;
+  color: white;
+}
+
+.book-content {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-rows: repeat(auto-fit, 250px);
+  gap: 5px;
+  padding: 15px;
+  border: 3px solid #63b8fa;
+  border-radius: 10px;
+}
+
+/*Dialog Box*/
+
 dialog {
   width: 380px;
   height: 500px;
+  margin-top: 100px;
   padding: 15px;
   border-radius: 10px;
 }
@@ -43,7 +142,7 @@ form {
   width: 40%;
   padding: 5px;
   border-radius: 10px;
-  background-color: aqua;
+  background-color: #ffe6ff;
 }
 
 .form-image > input {
@@ -84,8 +183,117 @@ textarea {
   font-weight: bold;
 }
 .cancel {
-  background-color: aqua;
+  background-color: #ef32d9;
+  font-weight: bolder;
 }
 .submit {
-  background-color: aqua;
+  background-color: #6bbaa3;
+  font-weight: bolder;
+}
+
+/* Book card */
+.book-card {
+  display: flex;
+}
+.book-card > img {
+  height: 100%;
+  width: 50%;
+  border-radius: 10px;
+}
+.book-info {
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
+  gap: 5px;
+  padding: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.75rem;
+  background: rgb(235, 235, 235);
+  border-radius: 10px;
+  box-shadow: inset 3px 0px 4px 2px gray;
+}
+
+.book-info > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.button {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.button > button {
+  cursor: pointer;
+  margin-left: 30px;
+  border-radius: 5px;
+  background-color: #ef32d9;
+  padding: 2px;
+  color: white;
+  font-weight: bold;
+}
+
+.button > input#read {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+input#read:checked {
+  accent-color: #4bc6c4;
+}
+
+.button > button:hover,
+.content > div:first-child > button:hover {
+  background-color: #2f0743;
+  border-color: #ef32d9;
+  color: #ef32d9;
+}
+
+/* hover animations */
+.cancel:hover {
+  background-color: white;
+  border: 1px solid #ef32d9;
+  color: #ef32d9;
+}
+
+.submit:hover {
+  background-color: white;
+  border: 1px solid #6bbaa3;
+  color: #6bbaa3;
+}
+
+.form-image > label:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #ef32d9;
+  color: #ef32d9;
+}
+
+/* Input hover effects */
+
+input:focus:placeholder-shown {
+  outline: none; /*Removes default focus of browser*/
+  border: 1px solid blue;
+  box-shadow: 0px 2px 2px gray;
+}
+
+input:not(:focus):placeholder-shown {
+  border: 1px solid #e5e7eb; /* Reset to neutral border */
+  background-color: white;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid greenyellow;
+}
+input:valid:not(:focus):not(:placeholder-shown) {
+  border: 1px solid greenyellow;
+  background-color: rgb(228, 255, 220);
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+  border: 1px solid red;
+  background-color: rgb(255, 218, 218);
 }

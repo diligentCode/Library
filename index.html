@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Libree</title>
   </head>
   <body>
     <div class="header">
@@ -45,8 +45,8 @@
         </div>
       </div>
     </div>
-    <dialog >
-      <form action="">
+    <dialog class="my-dialog">
+      <form>
         <div class="form-image">
           <img src="Assets/default.jpg" alt="Book" id="book-image" />
           <label style="display: block" for="image-input" id="image-input-btn"
@@ -56,6 +56,7 @@
             type="file"
             accept="image/jpeg , image/jpg , image/png "
             id="image-input"
+            required
           />
         </div>
         <div class="dialog-form-content">
@@ -64,16 +65,18 @@
             type="text"
             id="book-name"
             placeholder="Name of your book"
-            maxlength="10"
-            pattern="[a-zA-Z]+"
+            maxlength="16"
+            pattern="[a-zA-Z\s]+"
+            required
           />
           <label style="display: block" for="book-author">Author:-</label>
           <input
             type="text"
             id="book-author"
             placeholder="Name of Author"
-            maxlength="10"
-            pattern="[a-zA-Z]+"
+            maxlength="16"
+            pattern="[a-zA-Z\s]+"
+            required
           />
           <label style="display: block" for="book-pages">No of Pages:-</label>
           <input
@@ -81,7 +84,7 @@
             id="book-pages"
             placeholder="No of pages"
             maxlength="3"
-            pattern="/d{10}"
+            required
           />
           <label style="display: block" for="book-discription"
             >Discription:-</label
@@ -90,9 +93,10 @@
             name="Discription"
             id="book-discription"
             placeholder="Discription"
-            maxlength="30"
+            maxlength="50"
             rows="8"
             cols="10"
+            required
           ></textarea>
         </div>
         <div class="dailog-form-buttons">

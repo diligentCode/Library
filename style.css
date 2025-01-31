@@ -5,7 +5,6 @@ background: linear-gradient(to right, #e0eafc, #cfdef3);
 background: linear-gradient(to right, #eecda3, #ef629f);
 */
 * {
-  border: 1px solid red;
   box-sizing: border-box;
 }
 
@@ -79,8 +78,8 @@ body {
 .content > div:first-child > p {
   font-size: 20px;
   font-weight: bolder;
-  margin-bottom: 5px;
-  margin-left: 5px;
+  margin-bottom: 0px;
+  margin-left: 15px;
   color: white;
 }
 .content > div:first-child > button {
@@ -89,17 +88,19 @@ body {
   font-weight: 900;
   border-radius: 10px;
   cursor: pointer;
-  margin: 10px 5px 5px 0;
+  padding: 5px;
+  margin: 10px 15px 0px 0;
   background-color: #cf23cf;
   color: white;
 }
 
 .book-content {
   overflow: auto;
+  /* overflow-y: scroll; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   grid-template-rows: repeat(auto-fit, 250px);
-  gap: 5px;
+  gap: 10px;
   padding: 15px;
   border: 3px solid #63b8fa;
   border-radius: 10px;
@@ -110,7 +111,7 @@ body {
 dialog {
   width: 380px;
   height: 500px;
-  margin-top: 100px;
+  margin-top: 200px;
   padding: 15px;
   border-radius: 10px;
 }
@@ -205,18 +206,21 @@ textarea {
   width: 30%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
-  gap: 5px;
+  gap: 10px;
   padding: 5px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   background: rgb(235, 235, 235);
   border-radius: 10px;
   box-shadow: inset 3px 0px 4px 2px gray;
+
+  display: none;
 }
 
-.book-info > div {
-  display: flex;
-  flex-wrap: wrap;
+.book-info > div > p {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 .button {
   display: flex;
@@ -238,8 +242,34 @@ textarea {
   transform: scale(1.5);
 }
 
-.book-info {
-  display: none;
+/* Input hover effects */
+
+input:focus:placeholder-shown {
+  outline: none; /*Removes default focus of browser*/
+  border: 1px solid blue;
+  box-shadow: 0px 2px 2px gray;
+}
+
+input:not(:focus):placeholder-shown {
+  border: 1px solid #e5e7eb; /* Reset to neutral border */
+  background-color: white;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid greenyellow;
+}
+input:valid:not(:focus):not(:placeholder-shown) {
+  border: 1px solid greenyellow;
+  background-color: rgb(228, 255, 220);
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+  border: 1px solid red;
+  background-color: rgb(255, 218, 218);
 }
 
 /* hover animations */
@@ -274,32 +304,23 @@ input#read:checked {
   color: #ef32d9;
 }
 
-/* Input hover effects */
-
-input:focus:placeholder-shown {
-  outline: none; /*Removes default focus of browser*/
-  border: 1px solid blue;
-  box-shadow: 0px 2px 2px gray;
+/* For dailog box */
+::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: saturate(90%) blur(10px);
 }
 
-input:not(:focus):placeholder-shown {
-  border: 1px solid #e5e7eb; /* Reset to neutral border */
-  background-color: white;
+.book-card:hover {
+  border-radius: 10px;
+  border: 2px solid #ef32d9;
+  box-shadow: 1px 1px 20px -5px #ef32d9, -1px -1px 20px -5px #24fffb;
 }
-
-input:invalid {
-  border: 1px solid red;
+.book-card:hover > img {
+  width: 50%;
+  border-radius: 0;
 }
-
-input:valid {
-  border: 1px solid greenyellow;
-}
-input:valid:not(:focus):not(:placeholder-shown) {
-  border: 1px solid greenyellow;
-  background-color: rgb(228, 255, 220);
-}
-
-input:invalid:not(:focus):not(:placeholder-shown) {
-  border: 1px solid red;
-  background-color: rgb(255, 218, 218);
+.book-card:hover > .book-info {
+  display: grid;
+  width: 50%;
+  border-radius: 0;
 }
